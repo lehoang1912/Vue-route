@@ -5,9 +5,15 @@ let routes = [
         path: '/',
         component: require('./views/Home')
     },
+
     {
         path: '/about',
         component: require('./views/About')
+    },
+
+    {
+        path: '/scope-slot',
+        component: require('./views/MenuList')
     }
 ];
 
