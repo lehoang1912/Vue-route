@@ -10,6 +10,8 @@
 
                     <div class="message-body" v-text="status.body"></div>
                 </div>
+    
+                <add-to-stream @completed="addStatuses"></add-to-stream>
             </div>
         </div>
     </div>
@@ -18,8 +20,14 @@
 <script>
     import moment from 'moment';
     import Status from '../models/Status';
+    import AddToStream from '../components/AddToStream';
+
 
     export default {
+        components: {
+            AddToStream
+        },
+
         data() {
             return {
                 statuses: []
@@ -41,10 +49,18 @@
                 .then(({data}) => this.statuses = data);
         },
 
-        // methods: {
-        //     postedOn(status) {
-        //         return moment(status.created_at).fromNow();
-        //     }
-        // }
+        methods: {
+            // postedOn(status) {
+            //     return moment(status.created_at).fromNow();
+            // }
+
+            addStatuses(status) {
+                this.statuses.unshift(status);
+
+                alert('Your status is added to stream');
+
+                window.scrollTo(0, 0);
+            }
+        }
     }
 </script>
