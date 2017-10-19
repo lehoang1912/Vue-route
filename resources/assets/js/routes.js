@@ -14,6 +14,11 @@ let routes = [
     {
         path: '/scope-slot',
         component: require('./views/MenuList')
+    },
+
+    {
+        path: '/vue-subclassing',
+        component: require('./views/SubClassing')
     }
 ];
 

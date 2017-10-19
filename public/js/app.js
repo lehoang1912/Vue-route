@@ -31538,6 +31538,9 @@ var routes = [{
 }, {
     path: '/scope-slot',
     component: __webpack_require__(170)
+}, {
+    path: '/vue-subclassing',
+    component: __webpack_require__(181)
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
@@ -32557,6 +32560,139 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(182)
+/* template */
+var __vue_template__ = __webpack_require__(183)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/SubClassing.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-345f878c", Component.options)
+  } else {
+    hotAPI.reload("data-v-345f878c", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 182 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_SuperClassing__ = __webpack_require__(184);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_0__utilities_SuperClassing__["a" /* default */].extend({
+    data: function data() {
+        return {
+            project: 'Chat bot project'
+        };
+    }
+}));
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("p", [_vm._v("Name: " + _vm._s(_vm.name))]),
+    _vm._v(" "),
+    _c("p", [_vm._v("Company: " + _vm._s(_vm.company))]),
+    _vm._v(" "),
+    _c("p", [_vm._v("Project: " + _vm._s(_vm.project))]),
+    _vm._v(" "),
+    _c("p", [_vm._v("Age: " + _vm._s(_vm.age))]),
+    _vm._v(" "),
+    _c("p", [_vm._v("Year of birth: " + _vm._s(_vm.getYearOfBirth(_vm.age)))])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-345f878c", module.exports)
+  }
+}
+
+/***/ }),
+/* 184 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (Vue.extend({
+    data: function data() {
+        return {
+            name: 'Hoang Le',
+            company: 'Company HHH',
+            age: '26'
+        };
+    },
+
+
+    methods: {
+        getYearOfBirth: function getYearOfBirth(age) {
+            var year = new Date().getFullYear();
+            return year - age;
+        }
+    }
+}));
 
 /***/ })
 /******/ ]);

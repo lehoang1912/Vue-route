@@ -10,6 +10,9 @@
       <router-link tag="li" to="/scope-slot">
           <a>Scope slot</a>
       </router-link>
+      <router-link tag="li" to="/vue-subclassing">
+          <a>Vue subclassing</a>
+      </router-link>
     </ul>
   </div>
 </nav>
