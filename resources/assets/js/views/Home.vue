@@ -5,7 +5,7 @@
                 <div class="message" v-for="status in statuses">
                     <div class="message-header">
                         <p>{{ status.user.name }} said ...</p>
-                        <p>{{ postedOn(status) }}</p>
+                        <p>{{ status.created_at | ago | capitalize }}</p>
                     </div>
 
                     <div class="message-body" v-text="status.body"></div>
@@ -26,15 +26,25 @@
             }
         },
 
+        filters: {
+            ago(date) {
+                return moment(date).fromNow();
+            },
+
+            capitalize(value) {
+                return value.toUpperCase();
+            }
+        },
+
         created() {
             Status.all()
                 .then(({data}) => this.statuses = data);
         },
 
-        methods: {
-            postedOn(status) {
-                return moment(status.created_at).fromNow();
-            }
-        }
+        // methods: {
+        //     postedOn(status) {
+        //         return moment(status.created_at).fromNow();
+        //     }
+        // }
     }
 </script>

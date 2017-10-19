@@ -15551,6 +15551,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             statuses: []
         };
     },
+
+
+    filters: {
+        ago: function ago(date) {
+            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(date).fromNow();
+        },
+        capitalize: function capitalize(value) {
+            return value.toUpperCase();
+        }
+    },
+
     created: function created() {
         var _this = this;
 
@@ -15558,13 +15569,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var data = _ref.data;
             return _this.statuses = data;
         });
-    },
-
-
-    methods: {
-        postedOn: function postedOn(status) {
-            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(status.created_at).fromNow();
-        }
     }
 });
 
@@ -15586,7 +15590,11 @@ var render = function() {
             _c("div", { staticClass: "message-header" }, [
               _c("p", [_vm._v(_vm._s(status.user.name) + " said ...")]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.postedOn(status)))])
+              _c("p", [
+                _vm._v(
+                  _vm._s(_vm._f("capitalize")(_vm._f("ago")(status.created_at)))
+                )
+              ])
             ]),
             _vm._v(" "),
             _c("div", {
